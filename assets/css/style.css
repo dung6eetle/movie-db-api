@@ -1,0 +1,57 @@
+body {
+    min-height: 100vh;
+}
+.container {
+    padding: 0px 70px;
+}
+
+/* Search */
+
+#search {
+  background-color: rgb(107, 202, 240);
+  outline: none;
+  min-height: 38px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1.3rem;
+}
+#inputValue {
+    font-size: 1.3rem;
+    font-weight: 400;
+    min-width: 700px;
+    min-height: 40px;
+}
+#movie-searchable {
+    padding-top: 28px;
+}
+
+/* MOVIE BLOCK */
+
+section {
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+section img {
+    max-width: 250px;
+    max-height: 350px;
+    padding: 30px 10px;
+    transition: 250ms all;
+}
+img:hover {
+    margin-left: 0 40px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.content {
+    border: 1px solid rgb(107, 202, 240);
+    display: none;
+    font-size: 30px;
+    padding: 20px 10px;
+}
+.content-display {
+    display: block;
+}
+#content-close {
+    cursor: pointer;
+}
