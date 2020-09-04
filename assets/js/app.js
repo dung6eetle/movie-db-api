@@ -2,11 +2,17 @@
 const API_KEY = '132f3ea57c4e8fc725aef7f0904cdf6c';
 const url = 'https://api.themoviedb.org/3/search/movie?api_key=132f3ea57c4e8fc725aef7f0904cdf6c'
 const imgUrl = 'https://image.tmdb.org/t/p/w500'
+
 // Selecting from the DOM
 const buttonElement = document.querySelector('#search');
 const inputElement = document.querySelector('#inputValue');
 const movieSearchable = document.querySelector('#movie-searchable');
 const imgElement = document.querySelector('img');
+
+function generateUrl(path) {
+    const url = `https://api.themoviedb.org/3${path}?api_key=132f3ea57c4e8fc725aef7f0904cdf6c`
+    return url
+}
 
 function movieSection(movies) {
  return movies.map((movie) => {
@@ -43,7 +49,8 @@ function renderSearchMovies(data) {
 buttonElement.onclick = function(event) {
     event.preventDefault();
     const value = inputElement.value;
-    const newUrl = url + '&query=' + value
+    const path = '/search/movie'
+    const newUrl = generateUrl(path) + '&query=' + value
     fetch(newUrl) 
       .then(res => res.json())
       .then(renderSearchMovies)
@@ -56,7 +63,10 @@ buttonElement.onclick = function(event) {
 document.onclick = function(event) {
     const target = event.target;
     if (target.tagName.toLowerCase() === 'img') {
-      console.log('clicked img')
+      console.log('clicked img');
+      console.log('Event:', event) // путь target.dataset.movieId
+      const movieId = target.dataset.movieId;
+      console.log('movieId', movieId)
       const section = event.target.parentElement; // section
       const content = section.nextElementSibling; // content
       content.classList.add('content-display')
