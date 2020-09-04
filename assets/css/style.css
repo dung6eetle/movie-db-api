@@ -44,20 +44,25 @@ img:hover {
     cursor: pointer;
 }
 .content {
-    border: 1px solid rgb(107, 202, 240);
+    /* border: 1px solid rgb(107, 202, 240); */
+    background-color: rgb(248, 243, 230);
     display: none;
-    font-size: 30px;
-    padding: 20px 10px;
+    padding: 40px 10px;
     
 }
 .content-display {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    flex-flow: column wrap;
+    justify-content: center;
     align-items: center;
 
 }
 #content-close {
+    color: rgb(240, 57, 57);
     cursor: pointer;
     font-size: 30px;
+    font-weight: 800;
+}
+#content-close-text {
+    color: rgb(5, 5, 5)
 }
