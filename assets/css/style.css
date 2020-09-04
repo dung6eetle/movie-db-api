@@ -48,10 +48,16 @@ img:hover {
     display: none;
     font-size: 30px;
     padding: 20px 10px;
+    
 }
 .content-display {
-    display: block;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
 }
 #content-close {
     cursor: pointer;
+    font-size: 30px;
 }
