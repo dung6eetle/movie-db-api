@@ -1,5 +1,7 @@
+import '../css/style.css'
+require('dotenv').config()
 // API
-const API_KEY = '132f3ea57c4e8fc725aef7f0904cdf6c';
+const API_KEY = process.env.APP_API_KEY
 const url = 'https://api.themoviedb.org/3/search/movie?api_key=132f3ea57c4e8fc725aef7f0904cdf6c'
 const imgUrl = 'https://image.tmdb.org/t/p/w500'
 
@@ -8,6 +10,7 @@ const buttonElement = document.querySelector('#search');
 const inputElement = document.querySelector('#inputValue');
 const movieSearchable = document.querySelector('#movie-searchable');
 const imgElement = document.querySelector('img');
+
 
 function generateUrl(path) {
     const url = `https://api.themoviedb.org/3${path}?api_key=132f3ea57c4e8fc725aef7f0904cdf6c`
@@ -29,7 +32,7 @@ function createMovieContainer(movies) {
     movieElement.setAttribute('class', 'movie')
     const movieTemplate = `
             <section class="section">
-                ${movieSection(movies)}
+                ${movieSection(movies).join(' ')}
             </section>
             <div class="content">
                 <p id="content-close">Кликни что бы закрыть</p>
